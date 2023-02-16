@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "Coca Cola",
+    "description": "Bebida gaseosa",
+    "price": 100,
+    "thumbnail": "https://www.coca-cola.com.ar/.jpg",
+    "code": 1,
+    "stock": 110
+  },
+  {
+    "id": 2,
+    "title": "Harina",
+    "description": "Harina 000",
+    "price": 500,
+    "thumbnail": "https://www.harina.com.ar/.jpg",
+    "code": 105,
+    "stock": 15
+  },
+  {
+    "id": 3,
+    "title": "Zapato",
+    "description": "Zapato de cuero",
+    "price": 400,
+    "thumbnail": "https://www.zapato.com.ar/.jpg",
+    "code": 5041,
+    "stock": 30
+  },
+  {
+    "id": 4,
+    "title": "Copita",
+    "description": "Copita de vidrio",
+    "price": 110,
+    "thumbnail": "https://www.copita.com.ar/.jpg",
+    "code": 1545,
+    "stock": 4
+  },
+  {
+    "id": 5,
+    "title": "Cuchara",
+    "description": "Cuchara de acero",
+    "price": 50,
+    "thumbnail": "https://www.cuchara.com.ar/.jpg",
+    "code": 1545,
+    "stock": 4
+  },
+  {
+    "id": 6,
+    "title": "Cuchillo",
+    "description": "Cuchillo de acero",
+    "price": 50,
+    "thumbnail": "https://www.cuchillo.com.ar/.jpg",
+    "code": 1545,
+    "stock": 4
+  },
+  {
+    "id": 7,
+    "title": "Tenedor",
+    "description": "Tenedor de acero",
+    "price": 50,
+    "thumbnail": "https://www.tenedor.com.ar/.jpg",
+    "code": 1545,
+    "stock": 4
+  },
+  {
+    "id": 8,
+    "title": "Cuchara de postre",
+    "description": "Cuchara de postre de acero",
+    "price": 50,
+    "thumbnail": "https://www.cuchara-postre.com.ar/.jpg",
+    "code": 1545,
+    "stock": 4
+  },
+  {
+    "id": 9,
+    "title": "Cuchara de cafe",
+    "description": "Cuchara de cafe de acero",
+    "price": 50,
+    "thumbnail": "https://www.cuchara-cafe.com.ar/.jpg",
+    "code": 1545,
+    "stock": 4
+  },
+  {
+    "id": 10,
+    "title": "Cuchara de sopa",
+    "description": "Cuchara de sopa de acero",
+    "price": 50,
+    "thumbnail": "https://www.cuchara-sopa.com.ar/.jpg",
+    "code": 1545,
+    "stock": 4
+  }
+]
