@@ -14,6 +14,12 @@
 pnpm install
 ```
 
+#### Setup environment
+
+```bash
+PORT=8080
+```
+
 #### Ejecución
 
 ```bash
