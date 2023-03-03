@@ -49,39 +49,29 @@ productsRouter.get("/:id", async (req, res) => {
 });
 
 // Post a new product.
-productsRouter.post("/", Upload, async (req, res) => {
-  const { title, description, code, stock, category, price } = req.body; 
+productsRouter.post("/", Upload, ItemsValidate, async (req, res) => {
+  const { body: { title, description, code, stock, category, price } = req.body } = req;
 
   // Create a new array only with the filenames.
-  const files = await req.files.map(file => file.filename);
+  const filesMap = await req.files.map((file) => file.filename);
 
-  // If some of the fields from req.body are empty, send a 400 error.
-  if (ItemsValidate(title, description, code, stock, category, price)) {
-    res.status(400).json({ error: "Some of the fields are empty." });
-  } else {
-      try {
-        const newProduct = new ProductModel(title, description, code, Number(stock), category, Number(price), files);
-        const product = await fileManager.postData(newProduct);
-        res.status(200).json({ status: "success", payload: product });
-      } catch (error) {
-        res.status(500).json({ error: error.message });
-      }
-    }
+  try {
+    const newProduct = new ProductModel(title, description, code, Number(stock), category, Number(price), filesMap);
+    const product = await fileManager.postData(newProduct);
+    res.status(200).json({ status: "success", payload: product });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 });
 
 // // Put a product by id.
-productsRouter.put("/:id", async (req, res) => {
+productsRouter.put("/:id", ItemsValidate, async (req, res) => {
   const { id } = req.params;
   const { title, description, code, stock, category, price } = req.body;
 
   try {
     // Get the product by id.
     const product = await fileManager.getDataById(id);
-
-    if (ItemsValidate(title, description, code, stock, category, price)) {
-      res.status(400).json({ error: "Some of the fields are empty." });
-      return;
-    } 
 
     // Create a new product with the new data.
     const newProduct = new ProductModel(title, description, code, Number(stock), category, Number(price), product.files, product.status);  
@@ -95,7 +85,6 @@ productsRouter.put("/:id", async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
-
 });
 
 // Delete a product by id.
