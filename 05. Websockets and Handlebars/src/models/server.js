@@ -1,39 +1,40 @@
 const express = require("express");
-const path = require("path");
+const path = require("path") ;
 const loadRoutes = require("../utils/loadRoutes");
+const hbsConfig = require("../lib/handlebars");
+const socketConfig = require("../socket/config");
+const listenServer = require("../utils/listenServer");
 
-class Server {
+class InitialServer {
   constructor() {
     this.app = express();
     this.port = process.env.PORT || 3000;
   }
 
+  #viewEngine() {
+    hbsConfig(this.app);
+  }
+
   #middlewares() {
+    this.app.use(express.static(path.join("public")));
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
   }
 
   #routes() {
-    const { routesPath, routeFiles } = loadRoutes();
-
-    routeFiles.forEach((routeFile) => {
-      const { name: slug } = path.parse(routeFile);
-      const route = require(path.join(routesPath, routeFile));
-      this.app.use(`/api/${slug}`, route);
-    });
+    loadRoutes(this.app);
   }
 
   #listen() {
-    this.app.listen(this.port, () => {
-      console.log("Server running on port", this.port);
-    });
+    listenServer(this.app, this.port);
   }
 
   start() {
     this.#middlewares();
     this.#routes();
+    this.#viewEngine();
     this.#listen();
   }
-}
+} 
 
-module.exports = Server;
+module.exports = InitialServer;

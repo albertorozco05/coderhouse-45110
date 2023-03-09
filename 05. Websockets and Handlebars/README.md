@@ -1,12 +1,9 @@
-### Primer entrega del Proyecto Final
+### Websockets and Handlebars
 
-`# Proyecto Final` `# Full Stack`
+`# Websockets` `# Handlebars` `# Express` `# NodeJS`
 
-**/api/products** Ruta para el manejo de productos.
-**/api/carts** Ruta para el manejo de carritos de compras.
-
-#### Demostrative video 
-[Video](https://www.youtube.com/watch?v=o3hKLwwYFy8)
+**/** This is the root path. It will show the home page with the list of products. It will also show the list of messages sent by the clients.
+**/realtimeproducts** This path will show the list of products in real time using websockets.
 
 #### Instalación
 
@@ -17,10 +14,11 @@ pnpm install
 #### Setup environment
 
 ```bash
-PORT=8080
+Create a .env file with the following variables:
+PORT=
 ```
 
-#### Ejecución
+#### Run
 
 ```bash
 pnpm dev

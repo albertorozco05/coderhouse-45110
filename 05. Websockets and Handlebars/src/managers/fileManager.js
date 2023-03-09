@@ -12,8 +12,10 @@ class FileManager {
       // Read the file.
       const readFile = await fs.promises.readFile(this.path, "utf-8");
 
-      if (readFile.length === 0) res.status(200).json([{ message: "No data found." }]);
+      // if (readFile.length === 0) res.status(200).json([{ message: "No data found." }]);
+      if (readFile.length === 0) return [];
       else return JSON.parse(readFile);
+      return JSON.parse(readFile);
     } catch (error) {
       throw new Error(`Error reading file: ${error.message}`);
     }
@@ -24,7 +26,8 @@ class FileManager {
     const fileContent = await this.#readFile();
 
     try {
-      if (fileContent.length === 0) throw new Error(`Error: Not data found.`);
+      // if (fileContent.length === 0) throw new Error(`Error: Not data found.`);
+      if (fileContent.length === 0) return [];
       else return fileContent;
     } catch (error) {
       throw new Error(`Error: Not data found.`);

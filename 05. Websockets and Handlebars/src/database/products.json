@@ -1,1 +1,29 @@
-[]
+[
+  {
+    "id": "f9218e61-9d14-4f5e-b13f-511e4c14161c",
+    "title": "Guitar",
+    "description": "Gibson Guitar @ Boston",
+    "code": "AS123FDSD",
+    "stock": "5",
+    "category": "guitar",
+    "price": "789"
+  },
+  {
+    "id": "f9218e61-9d14-4f5e-b13f-511e4c14161d",
+    "title": "Guitar",
+    "description": "Gibson Guitar @ Boston",
+    "code": "AS123FDSD",
+    "stock": "5",
+    "category": "guitar",
+    "price": "789"
+  },
+  {
+    "id": "f9218e61-9d14-4f5e-b13f-511e4c14161e",
+    "title": "Guitar",
+    "description": "Gibson Guitar @ Boston",
+    "code": "AS123FDSD",
+    "stock": "5",
+    "category": "guitar",
+    "price": "789"
+  }
+]
